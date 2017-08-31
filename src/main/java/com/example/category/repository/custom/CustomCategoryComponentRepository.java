@@ -7,4 +7,5 @@ import com.example.category.entity.CategoryComposite;
  */
 public interface CustomCategoryComponentRepository {
     CategoryComposite find();
+    CategoryComposite find(String name);
 }

@@ -1,6 +1,7 @@
 package com.example.category.entity;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.persistence.DiscriminatorValue;
@@ -15,13 +16,10 @@ import java.util.List;
 @Entity
 @DiscriminatorValue("COMPOSITE")
 @Data
+@EqualsAndHashCode(callSuper=false)
 @ToString(exclude = "children")
 public class CategoryComposite extends CategoryComponent {
 
     @OneToMany(mappedBy = "parent")
-    private List<Category> children = Arrays.asList();
-
-    @Override
-    public void setParent(CategoryComponent categoryComponent) {
-    }
+    private List<CategoryComponent> children = Arrays.asList();
 }

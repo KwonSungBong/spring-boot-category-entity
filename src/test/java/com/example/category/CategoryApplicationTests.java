@@ -45,7 +45,7 @@ public class CategoryApplicationTests {
 	@Transactional
 	public void 테스트2() {
 		String name = "categoryComposite1";
-		CategoryComponent categoryComponent = categoryComponentRepository.findByName(name);
+		CategoryComponent categoryComponent = categoryComponentRepository.find(name);
 
 		Assert.assertTrue(name.equals(categoryComponent.getName()));
 	}

@@ -1,6 +1,7 @@
 package com.example.category.entity;
 
 import lombok.Data;
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "TYPE")
 @Data
+@ToString(exclude = "parent")
 public abstract class CategoryComponent {
 
     @Id
@@ -21,5 +23,7 @@ public abstract class CategoryComponent {
 
     private String name;
 
-    abstract public void setParent(CategoryComponent categoryComponent);
+    @ManyToOne
+    @JoinColumn(name="PARENT_ID")
+    private CategoryComponent parent;
 }

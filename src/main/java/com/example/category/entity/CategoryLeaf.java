@@ -1,6 +1,7 @@
 package com.example.category.entity;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.persistence.DiscriminatorValue;
@@ -14,15 +15,6 @@ import javax.persistence.ManyToOne;
 @Entity
 @DiscriminatorValue("LEFT")
 @Data
-@ToString(exclude = "parent")
+@EqualsAndHashCode(callSuper=false)
 public class CategoryLeaf extends CategoryComponent {
-
-    @ManyToOne
-    @JoinColumn(name="parent_id")
-    private CategoryComponent parent;
-
-    @Override
-    public void setParent(CategoryComponent categoryComponent) {
-        this.parent = categoryComponent;
-    }
 }
