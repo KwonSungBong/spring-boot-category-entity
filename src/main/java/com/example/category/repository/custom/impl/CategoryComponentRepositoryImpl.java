@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.support.QueryDslRepositorySupport
 
 import static com.example.category.entity.QCategoryComponent.categoryComponent;
 
+
 /**
  * Created by whilemouse on 17. 8. 31.
  */
@@ -25,6 +26,7 @@ public class CategoryComponentRepositoryImpl extends QueryDslRepositorySupport i
     @Override
     public CategoryComposite find(String name) {
         JPQLQuery query = from(categoryComponent)
+                .innerJoin(categoryComponent.children).fetchJoin()
                 .where(categoryComponent.name.eq(name));
         return (CategoryComposite) query.fetchOne();
     }

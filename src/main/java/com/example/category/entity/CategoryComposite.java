@@ -17,9 +17,9 @@ import java.util.List;
 @DiscriminatorValue("COMPOSITE")
 @Data
 @EqualsAndHashCode(callSuper=false)
-@ToString(exclude = "children")
+//@ToString(exclude = "children")
 public class CategoryComposite extends CategoryComponent {
 
-    @OneToMany(mappedBy = "parent")
-    private List<CategoryComponent> children = Arrays.asList();
+//    @OneToMany(mappedBy = "parent")
+//    private List<CategoryComponent> children = Arrays.asList();
 }

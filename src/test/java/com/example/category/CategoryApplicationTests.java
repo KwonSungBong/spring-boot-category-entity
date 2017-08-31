@@ -35,10 +35,10 @@ public class CategoryApplicationTests {
 	@Test
 	@Transactional
 	public void 테스트1() {
-		String name = "category3";
-		Category category = categoryRepository.findByName(name);
-
-		Assert.assertTrue(name.equals(category.getName()));
+//		String name = "category3";
+//		Category category = categoryRepository.findByName(name);
+//
+//		Assert.assertTrue(name.equals(category.getName()));
 	}
 
 	@Test
@@ -53,19 +53,19 @@ public class CategoryApplicationTests {
 	@Test
 	@Transactional
 	public void 테스트3() {
-		String name = "categoryComposite1";
-		CategoryComposite categoryComponent = categoryCompositeRepository.findByName(name);
-
-		Assert.assertTrue(name.equals(categoryComponent.getName()));
+//		String name = "categoryComposite1";
+//		CategoryComposite categoryComponent = categoryCompositeRepository.findByName(name);
+//
+//		Assert.assertTrue(name.equals(categoryComponent.getName()));
 	}
 
 	@Test
 	@Transactional
 	public void 테스트4() {
-		String name = "categoryLeaf1";
-		CategoryLeaf categoryLeaf = categoryLeafRepository.findByName(name);
-
-		Assert.assertTrue(name.equals(categoryLeaf.getName()));
+//		String name = "categoryLeaf1";
+//		CategoryLeaf categoryLeaf = categoryLeafRepository.findByName(name);
+//
+//		Assert.assertTrue(name.equals(categoryLeaf.getName()));
 	}
 
 }

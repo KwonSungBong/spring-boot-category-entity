@@ -11,6 +11,11 @@ spring:
     platform: h2
     initialize: true
 
+  jpa:
+    hibernate:
+      ddl-auto: create
+      show-sql: true
+
   h2.console.enabled: true
-  jpa.hibernate.ddl-auto: create
-  jpa.hibernate.show-sql: true
+
+logging.level.org.hibernate.SQL: debug

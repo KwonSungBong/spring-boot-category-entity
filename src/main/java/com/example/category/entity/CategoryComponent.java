@@ -5,6 +5,8 @@ import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by whilemouse on 17. 8. 31.
@@ -13,7 +15,7 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "TYPE")
 @Data
-@ToString(exclude = "parent")
+@ToString(exclude = {"parent", "children"})
 public abstract class CategoryComponent {
 
     @Id
@@ -26,4 +28,8 @@ public abstract class CategoryComponent {
     @ManyToOne
     @JoinColumn(name="PARENT_ID")
     private CategoryComponent parent;
+
+    @OneToMany(mappedBy = "parent")
+    private List<CategoryComponent> children = Arrays.asList();
+
 }
