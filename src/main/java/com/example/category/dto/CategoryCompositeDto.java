@@ -15,7 +15,7 @@ public class CategoryCompositeDto {
     @JsonTypeName("COMPOSITE")
     @Data
     public static class Result extends CategoryComponentDto.Result {
-        List<CategoryComponentDto.Result> children;
+        List<CategoryLeafDto.Result> children;
     }
 
 }
