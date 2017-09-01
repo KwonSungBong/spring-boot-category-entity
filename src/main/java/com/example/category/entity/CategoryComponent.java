@@ -15,7 +15,7 @@ import java.util.List;
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "TYPE")
 @Data
-@ToString(exclude = {"parent", "children"})
+@ToString(exclude = {"parent"})
 public abstract class CategoryComponent {
 
     @Id
@@ -28,8 +28,5 @@ public abstract class CategoryComponent {
     @ManyToOne
     @JoinColumn(name="PARENT_ID")
     private CategoryComponent parent;
-
-    @OneToMany(mappedBy = "parent")
-    private List<CategoryComponent> children = Arrays.asList();
 
 }

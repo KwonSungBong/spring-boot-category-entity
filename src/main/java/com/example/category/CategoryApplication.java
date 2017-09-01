@@ -32,28 +32,59 @@ public class CategoryApplication {
 		return () -> {
 			Category category1 = new Category();
 			category1.setName("category1");
-
 			Category category2 = new Category();
 			category2.setName("category2");
-
 			Category category3 = new Category();
 			category3.setName("category3");
 
+			Category category31 = new Category();
+			category31.setName("category31");
+			Category category32 = new Category();
+			category32.setName("category32");
+			Category category33 = new Category();
+			category33.setName("category33");
+			Category category34 = new Category();
+			category34.setName("category34");
+			Category category35 = new Category();
+			category35.setName("category35");
+			Category category36 = new Category();
+			category36.setName("category36");
+			Category category37 = new Category();
+			category37.setName("category37");
+
 			Category category4 = new Category();
 			category4.setName("category4");
-
 			Category category5 = new Category();
 			category5.setName("category5");
-
 			categoryRepository.save(category5);
 			category4.setParent(category5);
 			categoryRepository.save(category4);
 			category3.setParent(category4);
 			categoryRepository.save(category3);
+
+			category31.setParent(category4);
+			categoryRepository.save(category31);
+			category32.setParent(category4);
+			categoryRepository.save(category32);
+			category33.setParent(category4);
+			categoryRepository.save(category33);
+			category34.setParent(category4);
+			categoryRepository.save(category34);
+			category35.setParent(category4);
+			categoryRepository.save(category35);
+			category36.setParent(category4);
+			categoryRepository.save(category36);
+			category37.setParent(category4);
+			categoryRepository.save(category37);
+
 			category2.setParent(category3);
 			categoryRepository.save(category2);
 			category1.setParent(category2);
 			categoryRepository.save(category1);
+
+			/*****************************************************************/
+			/*****************************************************************/
+			/*****************************************************************/
 
 			CategoryComponent categoryComposite1 = new CategoryComposite();
 			categoryComposite1.setName("categoryComposite1");

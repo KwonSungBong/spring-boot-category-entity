@@ -2,6 +2,8 @@ package com.example.category.entity;
 
 import lombok.Data;
 import lombok.ToString;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -24,6 +26,7 @@ public class Category {
     @JoinColumn(name="parent_id")
     private Category parent;
 
+    @Fetch(FetchMode.SUBSELECT)
     @OneToMany(mappedBy = "parent")
     private List<Category> children = Arrays.asList();
 }
