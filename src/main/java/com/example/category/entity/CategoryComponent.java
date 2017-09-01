@@ -5,8 +5,6 @@ import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by whilemouse on 17. 8. 31.
@@ -28,5 +26,4 @@ public abstract class CategoryComponent {
     @ManyToOne
     @JoinColumn(name="PARENT_ID")
     private CategoryComponent parent;
-
 }

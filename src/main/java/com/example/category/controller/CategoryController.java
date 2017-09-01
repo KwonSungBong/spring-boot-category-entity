@@ -4,7 +4,6 @@ import com.example.category.dto.CategoryDto;
 import com.example.category.entity.Category;
 import com.example.category.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +19,6 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @RequestMapping(method = RequestMethod.GET, value="/find")
-    @Transactional
     public Category find(){
         String name = "category4";
         CategoryDto.Result result = categoryService.find(name);
